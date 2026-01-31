@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend Microservice</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        h2 { color: #333; }
+        ul { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Data from Backend Microservice</h2>
+
+<p><b>Service:</b> {{ data.service }}</p>
+<p><b>Version:</b> {{ data.version }}</p>
+<p><b>Owner:</b> {{ data.owner }}</p>
+
+<h3>Items</h3>
+<ul>
+{% for item in data['items'] %}
+    <li>{{ item['id'] }}: {{ item['name'] }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
